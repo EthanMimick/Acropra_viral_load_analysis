@@ -1,0 +1,10 @@
+#This loop was ran using the included Assentionlist.txt file 
+mkdir PRJNA473816
+#downloading .sra files from NCBI SRA
+prefetch --option-file <assenstionlist.txt>
+#extracting .fastq reads from the .sra files 
+for f in ./SRR*/*.sra;
+ do 
+fastq-dump --gzip --skip-technical --dumpbase --split-3 --read-filter pass --clip $f; 
+done
+# This leaves all the .sra files in their own directory wile agregating all the fastq reads in the main directory.

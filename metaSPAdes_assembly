@@ -1,0 +1,8 @@
+# SPAdes is a very reseource intensive program as such this sample sets # code reqired thousands of CPU hour accross 16 cores sharing 250gb of ram 
+# creating contigs from the fastq files using metaSPAdes
+for f in *_pass_1.fastq.gz;
+ do
+b=${f%_pass_1.fastq.gz};
+spades.py -1 ${f} -2 ${b}_pass_2.fastq.gz  -t 16 --meta -o ${b} -m 250000;
+done
+# final outputs for each read should be in the directory along with the .sra files.
