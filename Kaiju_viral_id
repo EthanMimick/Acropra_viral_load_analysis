@@ -1,0 +1,20 @@
+#Kaiju analysis:
+#NCBI:
+#I found these samples based on searching the NCBI for Acropora genome data with paired Illumina libraries.
+https://www.ncbi.nlm.nih.gov/Traces/study/?query_key=2&WebEnv=MCID_662bc1cef103bd61005020b3&o=acc_s%3Aa 
+#I uploaded the reads to Kbase using import SRA files as reads from the web.
+#To find the URL for the read you can select individual reads from the sequence read archive SRA. Here is a link to where you can find #the URL for example.
+https://trace.ncbi.nlm.nih.gov/Traces/index.html?view=run_browser&acc=SRR12363322&display=data-access 
+#I then copied the SRA normalized URL into the Kbase import tool and named the read. This was repeated for all fifteen samples that I #used in my analysis. The raw reads were then run through kaiju in Kbase. Using the Classify Taxonomy of Metagenomic Reads with Kaiju #tool. I added all 15 reads to this tool and then set the reference DB to the reference viral database (RVDB). After Kaiju ran, I #downloaded the kaiju_summaries.zip file from Kbase. This file was decompressed and then put into my WSL environment where I used bash #commands to move all species.KaijuReport files into a new directory called short and all species-longtail.KaijuReport files into a new #directory called Longtail using the code below.
+Mkdir Longtail
+Mkdir short 
+Cp *species.KaijuReport short
+cp *species-longtail.KaijuReport Longtail
+#I then entered each directory and concatenated the files to make long and shorttail files for use in R.
+Cd /short
+Cat * shortail.txt
+Cd \..
+Cd /longtail
+Cat * Longtail.txt 
+#open both .txt files in a text editor to remove headers from all but the first set of samples and add a header for read_number.
+files were then put into a folder to use as the working directory for R_viral_analysis.
