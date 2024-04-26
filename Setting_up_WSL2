@@ -1,0 +1,17 @@
+#To run many of the packages used in this class you need a linux or unix comand line.
+#Doing this on a PC requires the use of Windows subsystem for linux or WSL2.
+#You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11 to use the commands below. 
+#below are the steps to set up a linux comand line on a PC.
+#First search powershell in your search bar right click and run as administrator
+#in the power shell run the comand
+wsl --install
+#this should setup all required configurations for wsl
+#next we will set the version of WSL to WSL2
+wsl --set-default-version 2
+#after this you can go to the windows store and search Ubuntu to install an app that allows you to open your linux distribution.
+#On running your ubuntu install for the first time you will set a username and password I suggest saving them for future use.
+
+#To access your ubuntu file structure from file explorer you need to search for it. 
+#To do this open file explorer and enter \\wsl$ into the address bar.
+#once you do this you should see a Ubuntu folder once you open it you should see your Ubuntu files structure.
+#navigate to your home directory and pin it to your favorits in file explorer to easy access later.

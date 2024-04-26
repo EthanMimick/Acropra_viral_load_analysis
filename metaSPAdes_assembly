@@ -1,5 +1,6 @@
 # SPAdes is a very reseource intensive program as such this sample sets # code reqired thousands of CPU hour accross 16 cores sharing 250gb of ram 
 # creating contigs from the fastq files using metaSPAdes
+conda activate SPAdes
 for f in *_pass_1.fastq.gz;
  do
 b=${f%_pass_1.fastq.gz};

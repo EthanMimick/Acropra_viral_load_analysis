@@ -1,0 +1,37 @@
+#For ease of using different software inside your linux environment we will install anaconda3
+#inside your linux comand line run
+wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+bash anaconda3-2023.09-0-Linux-x86_64.sh
+#close and reopen your linux comand line
+#before your directory you should see (base)
+#you have now successfully installed anaconda3
+
+#if it did not automatically load run the code below
+#navigating to your conda bin with all conda comands
+cd .anaconda3/bin
+#to check if conda is active
+./conda
+#if you get  
+usage: conda [-h] [--no-plugins] [-V] COMMAND ...
+#run
+./conda init
+
+#adding channels 
+
+#channels are used by anaconda3 to find packages you want to install.
+#to add channels you run
+conda config --add channels <new_channel>
+#for this tutorial we will add two channels
+1. conda-forge
+2. bioconda
+
+#creating environments
+
+#once these channels are installed we can create environemnts for different tools
+#environments let you load different packages in anaconda3
+#to create an environemnt run 
+conda create -n<name_of_environment> <packages_you_want_in_this_environment>
+#listed below are all enivronments used in this project and the packages inside them
+env:sra packages:sra-tools
+env:SPAdes packages:spades
+env:binning packages:maxbin2,metabat2,concoct,drep,samtools

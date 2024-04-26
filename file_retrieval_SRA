@@ -1,4 +1,4 @@
-#This loop was ran using the included Assentionlist.txt file 
+#These comands were ran using the included Assentionlist.txt file 
 mkdir PRJNA473816
 #downloading .sra files from NCBI SRA
 prefetch --option-file <assenstionlist.txt>
